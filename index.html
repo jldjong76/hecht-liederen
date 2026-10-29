@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HECHT Weekend — Liederen</title>
+<style>
+  :root{
+    --ink:#1e293b; --deep:#0f3d5c; --teal:#0e7490; --line:#e2e8f0;
+    --bg:#f6f8fa; --card:#ffffff; --muted:#64748b; --teal-soft:#ecfeff;
+    --warm:#d97706; --warm-soft:#fef3e2;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
+    color:var(--ink); background:var(--bg); line-height:1.5; padding:12px;
+    font-size:17px;
+  }
+  header{
+    background:linear-gradient(135deg,var(--deep) 0%,var(--teal) 100%);
+    color:#fff; border-radius:16px; padding:22px 20px; margin-bottom:14px;
+  }
+  header h1{font-size:24px; line-height:1.2;}
+  header p{font-size:14px; opacity:.9; margin-top:6px;}
+  .tagline{display:flex; gap:6px; flex-wrap:wrap; margin-top:12px;}
+  .tagline span{background:rgba(255,255,255,.16); padding:3px 11px; border-radius:999px; font-size:12.5px; font-weight:600;}
+  h2.sec{
+    font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:var(--teal);
+    margin:22px 6px 10px; font-weight:800;
+  }
+  details.song{
+    background:var(--card); border:1px solid var(--line); border-radius:14px;
+    margin-bottom:10px; overflow:hidden; box-shadow:0 1px 3px rgba(15,23,42,.05);
+  }
+  details.song > summary{
+    list-style:none; cursor:pointer; padding:15px 16px 15px 48px; position:relative;
+    font-weight:700; font-size:16.5px; color:var(--ink); user-select:none;
+  }
+  details.song > summary::-webkit-details-marker{display:none;}
+  details.song > summary .sub{
+    display:block; font-size:12.5px; color:var(--muted); font-weight:600;
+    margin-top:2px; letter-spacing:.04em; text-transform:uppercase;
+  }
+  details.song > summary .num{
+    position:absolute; left:12px; top:14px; width:26px; height:26px; border-radius:8px;
+    background:var(--teal-soft); color:var(--teal); font-size:13px; font-weight:800;
+    display:flex; align-items:center; justify-content:center;
+  }
+  details.song > summary .chev{
+    position:absolute; right:16px; top:18px; color:var(--muted); font-size:12px;
+    transition:transform .18s ease;
+  }
+  details.song[open] > summary{border-bottom:1px solid var(--line); background:#f8fafc;}
+  details.song[open] > summary .chev{transform:rotate(180deg);}
+  .lyrics{padding:16px 18px 20px;}
+  .lyrics .line{display:block; margin:2px 0; font-size:17.5px;}
+  .lyrics .gap{display:block; height:12px;}
+  .lyrics .refrain{color:var(--deep); font-weight:600;}
+  .note{
+    margin-top:14px; background:var(--teal-soft); border-left:3px solid var(--teal);
+    padding:8px 12px; font-size:13.5px; border-radius:0 8px 8px 0; color:#334155;
+  }
+  .note.warm{background:var(--warm-soft); border-color:var(--warm);}
+  .src{margin-top:10px; font-size:12px; color:var(--muted);}
+  .src a{color:var(--teal); font-weight:600;}
+  .missing{
+    background:var(--warm-soft); border:1px dashed var(--warm); border-radius:10px;
+    padding:12px 14px; font-size:14.5px; color:#7c3f06;
+  }
+  .controls{
+    position:sticky; top:0; z-index:5; background:var(--bg);
+    display:flex; gap:8px; padding:8px 0; align-items:center;
+  }
+  .controls button{
+    border:1px solid var(--line); background:var(--card); color:var(--deep);
+    border-radius:999px; padding:6px 14px; font-size:13px; font-weight:700; cursor:pointer;
+  }
+  .controls button.active{background:var(--teal); color:#fff; border-color:var(--teal);}
+  .controls .hint{font-size:12px; color:var(--muted); margin-left:auto;}
+  footer{margin-top:24px; text-align:center; font-size:12px; color:var(--muted); padding-bottom:10px;}
+</style>
+</head>
+<body>
+<div class="page" style="max-width:720px;margin:0 auto;">
+
+  <header>
+    <h1>🎵 Liederen — HECHT 10 jaar</h1>
+    <p>Reflectieweekend 2026 · Tik op een lied om de tekst te openen. Tip: zet je telefoon niet op sluimerstand tijdens het zingen.</p>
+    <div class="tagline"><span>Thema: LUISTEREN</span><span>Wait for the Lord</span><span>Taizé &amp; E&amp;R</span></div>
+  </header>
+
+  <div class="controls">
+    <button onclick="setOpen(true)">Alles open</button>
+    <button onclick="setOpen(false)">Alles dicht</button>
+    <button onclick="setSize(-1)">A−</button>
+    <button onclick="setSize(1)">A+</button>
+  </div>
+
+  <!-- ===================== THEMELIED & TAIZÉ ===================== -->
+  <h2 class="sec">Themalied &amp; Taizé-gezangen</h2>
+
+  <details class="song">
+    <summary><span class="num">1</span>Wait for the Lord — themalied van het weekend<span class="chev">▼</span></summary>
+    <div class="lyrics">
+      <span class="line">Wait for the Lord, whose day is near.</span>
+      <span class="line">Wait for the Lord: be strong, take heart.</span>
+      <span class="gap"></span>
+      <span class="line">Wacht op de Heer, zijn dag is nabij.</span>
+      <span class="line">Wacht op de Heer: wees sterk van hart.</span>
+      <div class="src">Muziek: <a href="https://youtu.be/s7GexIvX8HU" target="_blank" rel="noopener">YouTube</a></div>
+    </div>
+  </details>
+
+  <details class="song">
+    <summary><span class="num">2</span>Bless the Lord<span class="sub">Taizé · minimal music</span><span class="chev">▼</span></summary>
+    <div class="lyrics">
+      <span class="line refrain">Bless the Lord, my soul,</span>
+      <span class="line refrain">and bless God's holy name.</span>
+      <span class="line refrain">Bless the Lord, my soul,</span>
+      <span class="line refrain">who leads me into life.</span>
+      <div class="note">Zingen als “minimal music” — steeds hetzelfde, toch steeds een beetje anders.</div>
+      <div class="src">Muziek: <a href="https://open.spotify.com/track/3pcFejGevVidlTnf3csGIU" target="_blank" rel="noopener">Spotify</a></div>
+    </div>
+  </details>
+
+  <details class="song">
+    <summary><span class="num">3</span>Within Our Darkest Night<span class="sub">Taizé</span><span class="chev">▼</span></summary>
+    <div class="lyrics">
+      <span class="line refrain">Within our darkest night,</span>
+      <span class="line refrain">You kindle the fire that never dies away,</span>
+      <span class="line refrain">that never dies away.</span>
+      <span class="gap"></span>
+      <span class="line refrain">Dans nos obscurités,</span>
+      <span class="line refrain">allume le feu qui ne s'éteint jamais,</span>
+      <span class="line refrain">qui ne s'éteint jamais.</span>
+      <div class="src">Muziek: <a href="https://hymnary.org/hymn/GG2013/294" target="_blank" rel="noopener">Hymnary (met begeleiding)</a></div>
+    </div>
+  </details>
+
+  <details class="song">
+    <summary><span class="num">4</span>Ubi Caritas<span class="sub">Taizé</span><span class="chev">▼</span></summary>
+    <div class="lyrics">
+      <span class="line refrain">Ubi caritas et amor,</span>
+      <span class="line refrain">Deus ibi est.</span>
+      <span class="gap"></span>
+      <span class="line">Waar liefde is en eendracht,</span>
+      <span class="line">daar is God.</span>
+      <div class="src">Muziek: <a href="https://hymnary.org/hymn/GG2013/205" target="_blank" rel="noopener">Hymnary (met begeleiding)</a></div>
+    </div>
+  </details>
+
+  <details class="song">
+    <summary><span class="num">5</span>Wees stil voor het aangezicht van God<span class="sub">Sela</span><span class="chev">▼</span></summary>
+    <div class="lyrics">
+      <span class="line">Wees stil voor het aangezicht van God,</span>
+      <span class="line">want heilig is de Heer.</span>
+      <span class="line">Aanbid Hem met eerbied en ontzag</span>
+      <span class="line">en kniel nu voor Hem neer,</span>
+      <span class="line">die zelf geen zonde kent</span>
+      <span class="line">en ons genade schenkt.</span>
+      <span class="gap"></span>
+      <span class="line">Wees stil, want de heerlijkheid van God</span>
+      <span class="line">omgeeft ons in dit uur.</span>
+      <span class="line">Wij staan nu op heilige grond,</span>
+      <span class="line">waar Hij verschijnt met vuur,</span>
+      <span class="line">een eeuwigdurend licht</span>
+      <span class="line">straalt van zijn aangezicht.</span>
+      <div class="src">Tekst &amp; bladmuziek: <a href="https://www.sela.nl/liederen/wees-stil-voor-het-aangezicht-van-god" target="_blank" rel="noopener">Sela</a></div>
+    </div>
+  </details>
+
+  <details class="song">
+    <summary><span class="num">6</span>In Christ Alone<span class="sub">Loflied</span><span class="chev">▼</span></summary>
+    <div class="lyrics">
+      <span class="line">In Christ alone my hope is found,</span>
+      <span class="line">He is my light, my strength, my song;</span>
+      <span class="line">this Cornerstone, this solid Ground,</span>
+      <span class="line">firm through the fiercest drought and storm.</span>
+      <span class="line">What heights of love, what depths of peace,</span>
+      <span class="line">when fears are stilled, when strivings cease!</span>
+      <span class="line">My Comforter, my All in All,</span>
+      <span class="line">here in the love of Christ I stand.</span>
+      <span class="gap"></span>
+      <span class="line">In Christ alone! — who took on flesh,</span>
+      <span class="line">fullness of God in helpless babe.</span>
+      <span class="line">This gift of love and righteousness,</span>
+      <span class="line">scorned by the ones He came to save:</span>
+      <span class="line">till on that cross as Jesus died,</span>
+      <span class="line">the wrath of God was satisfied;</span>
+      <span class="line">for every sin on Him was laid;</span>
+      <span class="line">here in the death of Christ I live.</span>
+      <span class="gap"></span>
+      <span class="line">There in the ground His body lay,</span>
+      <span class="line">Light of the world by darkness slain:</span>
+      <span class="line">then bursting forth in glorious Day</span>
+      <span class="line">up from the grave He rose again!</span>
+      <span class="line">And as He stands in victory</span>
+      <span class="line">sin's curse has lost its grip on me,</span>
+      <span class="line">for I am His and He is mine;</span>
+      <span class="line">bought with the precious blood of Christ.</span>
+      <span class="gap"></span>
+      <span class="line">No guilt in life, no fear in death,</span>
+      <span class="line">this is the power of Christ in me.</span>
+      <span class="line">From life's first cry to final breath,</span>
+      <span class="line">Jesus commands my destiny.</span>
+      <span class="line">No power of hell, no scheme of man</span>
+      <span class="line">can ever pluck me from His hand;</span>
+      <span class="line">till He returns or calls me home,</span>
+      <span class="line">here in the power of Christ I'll stand.</span>
+      <div class="src">Keith Getty &amp; Stuart Townend (2001) · <a href="https://hymnary.org/text/in_christ_alone_my_hope_is_found" target="_blank" rel="noopener">Hymnary</a></div>
+    </div>
+  </details>
+
+  <!-- ===================== PSALMEN & BERIJMINGEN ===================== -->
+  <h2 class="sec">Psalmen &amp; berijmingen</h2>
+
+  <details class="song">
+    <summary><span class="num">7</span>Psalm 100<span class="sub">De Nieuwe Psalmberijming</span><span class="chev">▼</span></summary>
+    <div class="lyrics">
+      <span class="line">Juich, heel de aarde, voor de HEER.</span>
+      <span class="line">Dien Hem met vreugde, geef Hem eer.</span>
+      <span class="line">Zing opgewekt met hart en stem.</span>
+      <span class="line">Kom met een vrolijk lied bij Hem.</span>
+      <span class="gap"></span>
+      <span class="line">Stem met ons in: “Ja, God is Hij!</span>
+      <span class="line">Hij maakte ons, zijn volk zijn wij,</span>
+      <span class="line">zijn kudde die Hij zorgzaam weidt.</span>
+      <span class="line">Hij is de herder die ons leidt.”</span>
+      <span class="gap"></span>
+      <span class="line">Trek jubelend zijn poorten door,</span>
+      <span class="line">zijn voorhof in en zing in koor.</span>
+      <span class="line">De HEER is goed en Hij verbindt</span>
+      <span class="line">zijn naam aan ons van kind op kind.</span>
+      <div class="src">Jan Pieter Kuijper · <a href="https://www.denieuwepsalmberijming.nl/berijmingen/psalm-100" target="_blank" rel="noopener">De Nieuwe Psalmberijming</a></div>
+    </div>
+  </details>
+
+  <details class="song">
+    <summary><span class="num">8</span>Heer, onze Heer, hoe heerlijk en verheven<span class="sub">Psalm 8 · berijming 1968</span><span class="chev">▼</span></summary>
+    <div class="lyrics">
+      <span class="line">Heer, onze Heer, hoe heerlijk en verheven</span>
+      <span class="line">hebt Gij uw naam op aarde uitgeschreven,</span>
+      <span class="line">machtige God, Gij die uw majesteit</span>
+      <span class="line">ten hemel over ons hebt uitgebreid.</span>
+      <div class="src">Liedboek · <a href="https://kerkliedwiki.nl/Heer,_onze_Heer,_hoe_heerlijk_en_verheven" target="_blank" rel="noopener">Kerkliedwiki</a></div>
+    </div>
+  </details>
+
+  <details class="song">
+    <summary><span class="num">9</span>Lof zij de Heer, de almachtige Koning der ere<span class="chev">▼</span></summary>
+    <div class="lyrics">
+      <span class="line">Lof zij de Heer', de almachtige Koning der ere.</span>
+      <span class="line">Laat ons naar hartelust zingen en blij musiceren,</span>
+      <span class="line">loof al wat ademt de Here.</span>
+      <span class="gap"></span>
+      <span class="line">Lof zij de Heer' die uw huis en uw haard heeft gezegend,</span>
+      <span class="line">lof zij de Hemelse liefde die over ons regent.</span>
+      <span class="line">Denk elke dag aan wat zijn almacht vermag,</span>
+      <span class="line">die u met liefde bejegent.</span>
+      <span class="gap"></span>
+      <span class="line">Lof zij de Heer met de heerlijkste naam van zijn namen,</span>
+      <span class="line">christenen loof Hem met Abrahams kinderen samen.</span>
+      <span class="line">Hart, wees gerust, Hij is uw licht en uw lust.</span>
+      <span class="line">Alles wat ademt zegt: Amen.</span>
+      <div class="src">Joachim Neander, vert. Jan Wit &amp; J.W. Schulte Nordholt · <a href="https://petrus.protestantsekerk.nl/artikel/lof-zij-de-heer-de-almachtige-koning-der-ere/" target="_blank" rel="noopener">Petrus</a></div>
+    </div>
+  </details>
+
+  <details class="song">
+    <summary><span class="num">10</span>Psalm 103 — Looft de HERE mijn ziel<span class="sub">Berijming 1773 · terugblik-moment</span><span class="chev">▼</span></summary>
+    <div class="lyrics">
+      <span class="line">Loof, loof den HEER', mijn ziel, met alle krachten;</span>
+      <span class="line">verhef Zijn naam, zo groot, zo heilig t' achten;</span>
+      <span class="line">och of nu al, wat in mij is, Hem preez'!</span>
+      <span class="line">Loof, loof, mijn ziel, den Hoorder der gebeden;</span>
+      <span class="line">vergeet nooit één van Zijn weldadigheden;</span>
+      <span class="line">vergeet ze niet; 't is God, die z' u bewees.</span>
+      <span class="gap"></span>
+      <span class="line">Loof Hem, die u vergunt uw zielsverlangen,</span>
+      <span class="line">en 't goede tot verzading doet ontvangen;</span>
+      <span class="line">uw jeugd vernieuwt, gelijk eens arends jeugd.</span>
+      <div class="src">Staatsberijming 1773 · <a href="https://liturgie.app/bibliotheek/psalmen/berijming1773/psalm-103" target="_blank" rel="noopener">Liturgie.app</a></div>
+    </div>
+  </details>
+
+  <details class="song">
+    <summary><span class="num">11</span>Heer, U doorgrondt mij<span class="sub">Psalm 139 · luisteren begint bij gekend zijn</span><span class="chev">▼</span></summary>
+    <div class="lyrics">
+      <span class="line">HEER, U doorgrondt mij, U ontwart</span>
+      <span class="line">al de geheimen van mijn hart.</span>
+      <span class="line">U ziet mij thuis en onderweg;</span>
+      <span class="line">U hoort de woorden die ik zeg.</span>
+      <div class="src">De Nieuwe Psalmberijming · <a href="https://www.denieuwepsalmberijming.nl/berijmingen/psalm-139" target="_blank" rel="noopener">Psalm 139</a></div>
+    </div>
+  </details>
+
+  <details class="song">
+    <summary><span class="num">12</span>Zijn goedheid en genade<span class="sub">Psalm 23:6 · E&amp;R 7</span><span class="chev">▼</span></summary>
+    <div class="lyrics">
+      <span class="line">Zijn goedheid en genade zijn steeds mijn deel,</span>
+      <span class="line">elke dag dat ik leef.</span>
+      <span class="line">En ik zal wonen in het huis van de Heer,</span>
+      <span class="line">elke dag dat ik leef.</span>
+    </div>
+  </details>
+
+  <!-- ===================== E&R PER MOMENT ===================== -->
+  <h2 class="sec">E&amp;R-liederen per moment van het weekend</h2>
+
+  <h2 class="sec" style="color:var(--muted);">🌅 Opening &amp; aanbidding</h2>
+
+  <details class="song">
+    <summary><span class="num">13</span>Grote God, wij loven U<span class="sub">E&amp;R 135</span><span class="chev">▼</span></summary>
+    <div class="lyrics">
+      <span class="line">Grote God, wij loven U,</span>
+      <span class="line">Heer, o sterkste aller sterren!</span>
+      <span class="line">Heel de wereld buigt voor U</span>
+      <span class="line">en bewondert Uwe werken.</span>
+      <span class="line">Die Gij waart ten allen tijd,</span>
+      <span class="line">blijft Gij ook in eeuwigheid.</span>
+      <span class="gap"></span>
+      <span class="line">Alles wat U prijzen kan,</span>
+      <span class="line">U, de eeuw'ge, Ongeziene,</span>
+      <span class="line">looft Uw liefd' en zingt er van!</span>
+      <span class="line">Alle Eng'len, die U dienen,</span>
+      <span class="line">roepen U nooit lovensmoe:</span>
+      <span class="line">"Heilig, heilig, heilig" toe!</span>
+      <span class="gap"></span>
+      <span class="line">Heer, ontferm U over ons,</span>
+      <span class="line">open Uwe Vaderarmen,</span>
+      <span class="line">stort Uw zegen over ons,</span>
+      <span class="line">neem ons op in Uw erbarmen!</span>
+      <span class="line">Eeuwig blijft Uw trouw bestaan,</span>
+      <span class="line">laat ons niet verloren gaan!</span>
+    </div>
+  </details>
+
+  <details class="song">
+    <summary><span class="num">14</span>Machtig God, sterke Rots<span class="sub">E&amp;R 155 · openingslied met tempo</span><span class="chev">▼</span></summary>
+    <div class="lyrics">
+      <span class="line refrain">Machtig God, sterke Rots,</span>
+      <span class="line refrain">U alleen bent waardig.</span>
+      <span class="line refrain">Aard en hemel prijzen U,</span>
+      <span class="line refrain">glorie voor Uw naam.</span>
+      <span class="gap"></span>
+      <span class="line">Lam van God, hoogste Heer,</span>
+      <span class="line">heilig en rechtvaardig.</span>
+      <span class="line">Stralend licht, Morgenster,</span>
+      <span class="line">niemand is als U.</span>
+      <span class="gap"></span>
+      <span class="line">Prijs de Vader, prijs de Zoon,</span>
+      <span class="line">prijs de Geest die in ons woont.</span>
+      <span class="line">Prijs de Koning der eeuwigheid.</span>
+    </div>
+  </details>
+
+  <h2 class="sec" style="color:var(--muted);">🔎 Terugblik &amp; dankzegging (vrijdag)</h2>
+
+  <details class="song">
+    <summary><span class="num">15</span>Dank U voor deze nieuwe morgen<span class="sub">E&amp;R 122</span><span class="chev">▼</span></summary>
+    <div class="lyrics">
+      <span class="line">Dank U voor deze nieuwe morgen,</span>
+      <span class="line">dank U voor elke nieuwe dag,</span>
+      <span class="line">dank U dat ik met al mijn zorgen</span>
+      <span class="line">bij U komen mag.</span>
+    </div>
+  </details>
+
+  <h2 class="sec" style="color:var(--muted);">🕯 Contemplatie &amp; stilte</h2>
+
+  <details class="song">
+    <summary><span class="num">16</span>U bent mijn schuilplaats, Heer<span class="sub">E&amp;R 169 · draagt a capella goed</span><span class="chev">▼</span></summary>
+    <div class="lyrics">
+      <span class="line refrain">U bent mijn schuilplaats, Heer,</span>
+      <span class="line refrain">U vult mijn hart steeds weer</span>
+      <span class="line refrain">met een verlossingslied.</span>
+      <span class="line">Telkens als ik angstig ben, steun ik op U.</span>
+      <span class="line">Ik vertrouw op U.</span>
+      <span class="line">Als ik zwak ben, ben ik sterk</span>
+      <span class="line">in de kracht van mijn Heer.</span>
+      <span class="line">Telkens als ik angstig ben, steun ik op U.</span>
+    </div>
+  </details>
+
+  <h2 class="sec" style="color:var(--muted);">👂 Thema “luisteren”</h2>
+
+  <details class="song">
+    <summary><span class="num">17</span>Uw Woord is een lamp voor mijn voet<span class="sub">E&amp;R 63 · kort · bij “Luisteren naar God”</span><span class="chev">▼</span></summary>
+    <div class="lyrics">
+      <span class="line refrain">Uw Woord is een lamp voor mijn voet</span>
+      <span class="line refrain">en een licht op mijn pad.</span>
+      <span class="line refrain">Uw Woord is een lamp voor mijn voet</span>
+      <span class="line refrain">en een licht op mijn pad.</span>
+      <span class="line refrain">Uw Woord is een lamp, Uw Woord is een licht,</span>
+      <span class="line refrain">Uw Woord is een lamp voor mijn voet</span>
+      <span class="line refrain">en een licht op mijn pad.</span>
+    </div>
+  </details>
+
+  <h2 class="sec" style="color:var(--muted);">🙏 Gebed &amp; bede (popcorn-gebed vrijdag)</h2>
+
+  <details class="song">
+    <summary><span class="num">18</span>Geef vrede, Heer, geef vrede<span class="sub">E&amp;R 129 · korte, herhaalbare bede</span><span class="chev">▼</span></summary>
+    <div class="lyrics">
+      <span class="line">Geef vrede, Heer, geef vrede,</span>
+      <span class="line">de wereld wil slechts strijd.</span>
+      <span class="line">Al wordt het recht beleden,</span>
+      <span class="line">de sterkste wint het pleit.</span>
+      <span class="line">Het onrecht heerst op aarde,</span>
+      <span class="line">de leugen triomfeert,</span>
+      <span class="line">ontluistert elke waarde,</span>
+      <span class="line">o red ons sterke Heer.</span>
+      <span class="gap"></span>
+      <span class="line">Geef vrede, Heer, geef vrede,</span>
+      <span class="line">de aarde wacht zo lang,</span>
+      <span class="line">er wordt zo veel geleden,</span>
+      <span class="line">de mensen zijn zo bang,</span>
+      <span class="line">de toekomst is zo duister</span>
+      <span class="line">en ons geloof zo klein;</span>
+      <span class="line">o Jezus Christus, luister</span>
+      <span class="line">en laat ons niet alleen!</span>
+      <span class="gap"></span>
+      <span class="line">Geef vrede, Heer, geef vrede,</span>
+      <span class="line">Gij die de vrede zijt,</span>
+      <span class="line">die voor ons hebt geleden,</span>
+      <span class="line">gestreden onze strijd,</span>
+      <span class="line">opdat wij zouden leven</span>
+      <span class="line">bevrijd van angst en pijn,</span>
+      <span class="line">de mensen blijdschap geven</span>
+      <span class="line">en vredestichters zijn.</span>
+      <span class="gap"></span>
+      <span class="line">Geef vrede, Heer, geef vrede,</span>
+      <span class="line">bekeer ons felle hart.</span>
+      <span class="line">Deel ons uw liefde mede,</span>
+      <span class="line">die onze boosheid tart,</span>
+      <span class="line">die onze mond leert spreken</span>
+      <span class="line">en onze handen leidt.</span>
+      <span class="line">Maak ons een levend teken:</span>
+      <span class="line">uw vrede wint de strijd!</span>
+    </div>
+  </details>
+
+  <details class="song">
+    <summary><span class="num">19</span>Vader, ik aanbid U<span class="sub">E&amp;R 171 · canon</span><span class="chev">▼</span></summary>
+    <div class="lyrics">
+      <span class="line">Vader, ik aanbid U,</span>
+      <span class="line">'k leg mijn leven voor U,</span>
+      <span class="line">zo heb ik U lief.</span>
+      <span class="gap"></span>
+      <span class="line">Jezus, ik aanbid U,</span>
+      <span class="line">'k leg mijn leven voor U,</span>
+      <span class="line">zo heb ik U lief.</span>
+      <span class="gap"></span>
+      <span class="line">Heil'ge Geest, ik aanbid U,</span>
+      <span class="line">'k leg mijn leven voor U,</span>
+      <span class="line">zo heb ik U lief.</span>
+      <div class="note">Canon: de tweede stem zet in na één regel.</div>
+    </div>
+  </details>
+
+  <h2 class="sec" style="color:var(--muted);">⚓ Vertrouwen &amp; toekomst (zaterdag, Watchword)</h2>
+
+  <details class="song">
+    <summary><span class="num">20</span>God is getrouw, zijn plannen falen niet<span class="sub">E&amp;R 131 · canon / tegenstem</span><span class="chev">▼</span></summary>
+    <div class="lyrics">
+      <span class="line">God is getrouw, zijn plannen falen niet,</span>
+      <span class="line">Hij kiest de Zijnen uit, Hij roept die allen.</span>
+      <span class="line">Die 't heden kent, de toekomst overziet,</span>
+      <span class="line">laat van Zijn woorden geen ter aarde vallen.</span>
+      <span class="gap"></span>
+      <span class="line">En 't werk der eeuwen, dat Zijn Geest omspant,</span>
+      <span class="line">volvoert Zijn hand.</span>
+      <div class="note">Kan als canon of met tegenstem gezongen worden.</div>
+      <div class="src">Hendrik Pierson · <a href="https://www.kerkliedwiki.nl/God_is_getrouw,_zijn_plannen_falen_niet" target="_blank" rel="noopener">Kerkliedwiki</a></div>
+    </div>
+  </details>
+
+  <details class="song">
+    <summary><span class="num">21</span>Wat de toekomst brengen moge<span class="sub">E&amp;R 174 · a capella</span><span class="chev">▼</span></summary>
+    <div class="lyrics">
+      <span class="line">Wat de toekomst brengen moge,</span>
+      <span class="line">mij geleidt des Heren hand,</span>
+      <span class="line">moedig sla ik dus de ogen</span>
+      <span class="line">naar het onbekende land.</span>
+      <span class="line">Leer mij volgen zonder vragen,</span>
+      <span class="line">Vader, wat Gij doet is goed.</span>
+      <span class="line">Leer mij slechts het heden dragen</span>
+      <span class="line">met een rustig, kalme moed.</span>
+      <span class="gap"></span>
+      <span class="line">Heer, ik wil Uw liefde loven,</span>
+      <span class="line">al begrijpt mijn ziel U niet.</span>
+      <span class="line">Zalig hij die durft geloven,</span>
+      <span class="line">ook wanneer het oog niet ziet.</span>
+      <span class="line">Schijnen mij Uw wegen duister,</span>
+      <span class="line">zie ik vraag ik niet: waarom?</span>
+      <span class="line">Eenmaal zie ik al Uw luister</span>
+      <span class="line">als ik in Uw hemel kom.</span>
+      <span class="gap"></span>
+      <span class="line">Waar de weg mij brengen moge,</span>
+      <span class="line">aan des Vaders trouwe hand,</span>
+      <span class="line">loop ik met gesloten ogen</span>
+      <span class="line">naar het onbekende land.</span>
+      <div class="src">Jacqueline van der Waals · <a href="https://www.liedboekcompendium.nl/lied/913-wat-de-toekomst-brengen-moge-8_7_1" target="_blank" rel="noopener">Liedboekcompendium</a></div>
+    </div>
+  </details>
+
+  <h2 class="sec" style="color:var(--muted);">🎉 Vieren &amp; afsluiting (zaterdag)</h2>
+
+  <details class="song">
+    <summary><span class="num">22</span>U maakt ons één, U bracht ons tezamen<span class="sub">E&amp;R 170 · community-lied</span><span class="chev">▼</span></summary>
+    <div class="lyrics">
+      <span class="line refrain">U maakt ons één,</span>
+      <span class="line refrain">U bracht ons tezamen,</span>
+      <span class="line refrain">wij eren en aanbidden U.</span>
+      <span class="gap"></span>
+      <span class="line">Wordt Uw wil gedaan,</span>
+      <span class="line">dan bindt het ons saam,</span>
+      <span class="line">iedereen zal deel zijn</span>
+      <span class="line">van Uw gezin.</span>
+    </div>
+  </details>
+
+  <details class="song">
+    <summary><span class="num">23</span>Samen in de naam van Jezus<span class="sub">E&amp;R 168</span><span class="chev">▼</span></summary>
+    <div class="lyrics">
+      <span class="line">Samen in de naam van Jezus</span>
+      <span class="line">heffen wij een loflied aan,</span>
+      <span class="line">want de Geest spreekt alle talen</span>
+      <span class="line">en doet ons elkaar verstaan.</span>
+      <span class="line">Samen bidden, samen zoeken</span>
+      <span class="line">naar het plan van onze Heer.</span>
+      <span class="line">Samen zingen en getuigen,</span>
+      <span class="line">samen leven tot zijn eer.</span>
+      <span class="gap"></span>
+      <span class="line">Heel de wereld moet het weten</span>
+      <span class="line">dat God niet veranderd is,</span>
+      <span class="line">en zijn liefde als een lichtstraal</span>
+      <span class="line">doordringt in de duisternis.</span>
+      <span class="line">'t Werk van God is niet te keren</span>
+      <span class="line">omdat Hij er over waakt,</span>
+      <span class="line">en de Geest doorbreekt de grenzen</span>
+      <span class="line">die door mensen zijn gemaakt.</span>
+      <span class="gap"></span>
+      <span class="line">Prijst de Heer, de weg is open</span>
+      <span class="line">naar de Vader, naar elkaar.</span>
+      <span class="line">Jezus Christus, Triomfator,</span>
+      <span class="line">mijn Verlosser, Middelaar.</span>
+      <span class="line">Vader, met geheven handen</span>
+      <span class="line">breng ik U mijn dank en eer.</span>
+      <span class="line">'t Is uw Geest die mij doet zeggen:</span>
+      <span class="line">Jezus Christus is de Heer!</span>
+    </div>
+  </details>
+
+  <details class="song">
+    <summary><span class="num">24</span>De Heer zegene u<span class="sub">Slotlied / zegengebed</span><span class="chev">▼</span></summary>
+    <div class="lyrics">
+      <span class="line">De HEER zegene u.</span>
+      <span class="line">De HEER zegene u.</span>
+      <span class="line">De HEER zegene u en Hij behoede u.</span>
+      <span class="line">De HEER verheffe Zijn aangezicht over uw leven</span>
+      <span class="line">en geven u vrede. Amen.</span>
+    </div>
+  </details>
+
+  <footer>HECHT · Reflectieweekend 2026 · Liederen ter voorbereiding en tijdens het weekend</footer>
+</div>
+
+<script>
+  function setOpen(open){
+    document.querySelectorAll('details.song').forEach(d => d.open = open);
+  }
+  let scale = 0;
+  function setSize(dir){
+    scale = Math.min(4, Math.max(-2, scale + dir));
+    document.querySelectorAll('.lyrics .line').forEach(el => {
+      el.style.fontSize = (17.5 + scale * 1.5) + 'px';
+    });
+  }
+</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" nonce="CshaD9yIyXfj4YuwmUqZjw==" data-cf-beacon='{"version":"2024.11.0","token":"36b4216ae2dc4d5488c249161e71fe1e","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
