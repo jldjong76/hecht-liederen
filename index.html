@@ -19,7 +19,10 @@
   header{
     background:linear-gradient(135deg,var(--deep) 0%,var(--teal) 100%);
     color:#fff; border-radius:16px; padding:22px 20px; margin-bottom:14px;
+    display:flex; align-items:center; gap:16px; flex-wrap:wrap;
   }
+  header .logo{height:72px; width:auto; background:#fff; border-radius:10px; padding:5px; flex:0 0 auto;}
+  header .headtext{flex:1 1 220px; min-width:0;}
   header h1{font-size:24px; line-height:1.2;}
   header p{font-size:14px; opacity:.9; margin-top:6px;}
   .tagline{display:flex; gap:6px; flex-wrap:wrap; margin-top:12px;}
@@ -84,9 +87,12 @@
 <div class="page" style="max-width:720px;margin:0 auto;">
 
   <header>
-    <h1>🎵 Liederen — HECHT 10 jaar</h1>
-    <p>Reflectieweekend 2026 · Tik op een lied om de tekst te openen. Tip: zet je telefoon niet op sluimerstand tijdens het zingen.</p>
-    <div class="tagline"><span>Thema: LUISTEREN</span><span>Wait for the Lord</span><span>Taizé &amp; E&amp;R</span></div>
+    <img class="logo" src="hecht10jaar.png" alt="Logo HECHT 10 jaar">
+    <div class="headtext">
+      <h1>🎵 Liederen — HECHT 10 jaar</h1>
+      <p>Reflectieweekend 2026 · Tik op een lied om de tekst te openen. Tip: zet je telefoon niet op sluimerstand tijdens het zingen.</p>
+      <div class="tagline"><span>Thema: LUISTEREN</span><span>Wait for the Lord</span><span>Taizé &amp; E&amp;R</span></div>
+    </div>
   </header>
 
   <div class="controls">
@@ -114,10 +120,10 @@
   <details class="song">
     <summary><span class="num">2</span>Bless the Lord<span class="sub">Taizé · minimal music</span><span class="chev">▼</span></summary>
     <div class="lyrics">
-      <span class="line refrain">Bless the Lord, my soul,</span>
-      <span class="line refrain">and bless God's holy name.</span>
-      <span class="line refrain">Bless the Lord, my soul,</span>
-      <span class="line refrain">who leads me into life.</span>
+      <span class="line">Bless the Lord, my soul,</span>
+      <span class="line">and bless God's holy name.</span>
+      <span class="line">Bless the Lord, my soul,</span>
+      <span class="line">who leads me into life.</span>
       <div class="note">Zingen als “minimal music” — steeds hetzelfde, toch steeds een beetje anders.</div>
       <div class="src">Muziek: <a href="https://open.spotify.com/track/3pcFejGevVidlTnf3csGIU" target="_blank" rel="noopener">Spotify</a></div>
     </div>
@@ -126,13 +132,13 @@
   <details class="song">
     <summary><span class="num">3</span>Within Our Darkest Night<span class="sub">Taizé</span><span class="chev">▼</span></summary>
     <div class="lyrics">
-      <span class="line refrain">Within our darkest night,</span>
-      <span class="line refrain">You kindle the fire that never dies away,</span>
-      <span class="line refrain">that never dies away.</span>
+      <span class="line">Within our darkest night,</span>
+      <span class="line">You kindle the fire that never dies away,</span>
+      <span class="line">that never dies away.</span>
       <span class="gap"></span>
-      <span class="line refrain">Dans nos obscurités,</span>
-      <span class="line refrain">allume le feu qui ne s'éteint jamais,</span>
-      <span class="line refrain">qui ne s'éteint jamais.</span>
+      <span class="line">Dans nos obscurités,</span>
+      <span class="line">allume le feu qui ne s'éteint jamais,</span>
+      <span class="line">qui ne s'éteint jamais.</span>
       <div class="src">Muziek: <a href="https://hymnary.org/hymn/GG2013/294" target="_blank" rel="noopener">Hymnary (met begeleiding)</a></div>
     </div>
   </details>
@@ -140,8 +146,8 @@
   <details class="song">
     <summary><span class="num">4</span>Ubi Caritas<span class="sub">Taizé</span><span class="chev">▼</span></summary>
     <div class="lyrics">
-      <span class="line refrain">Ubi caritas et amor,</span>
-      <span class="line refrain">Deus ibi est.</span>
+      <span class="line">Ubi caritas et amor,</span>
+      <span class="line">Deus ibi est.</span>
       <span class="gap"></span>
       <span class="line">Waar liefde is en eendracht,</span>
       <span class="line">daar is God.</span>
@@ -460,23 +466,13 @@
     </div>
   </details>
 
-  <details class="song">
-    <summary><span class="num">13</span>Zijn goedheid en genade<span class="sub">Psalm 23:6 · E&amp;R 7</span><span class="chev">▼</span></summary>
-    <div class="lyrics">
-      <span class="line">Zijn goedheid en genade zijn steeds mijn deel,</span>
-      <span class="line">elke dag dat ik leef.</span>
-      <span class="line">En ik zal wonen in het huis van de Heer,</span>
-      <span class="line">elke dag dat ik leef.</span>
-    </div>
-  </details>
-
   <!-- ===================== E&R PER MOMENT ===================== -->
   <h2 class="sec">E&amp;R-liederen per moment van het weekend</h2>
 
   <h2 class="sec" style="color:var(--muted);">🌅 Opening &amp; aanbidding</h2>
 
   <details class="song">
-    <summary><span class="num">14</span>Grote God, wij loven U<span class="sub">E&amp;R 135</span><span class="chev">▼</span></summary>
+    <summary><span class="num">13</span>Grote God, wij loven U<span class="sub">E&amp;R 135</span><span class="chev">▼</span></summary>
     <div class="lyrics">
       <span class="line">Grote God, wij loven U,</span>
       <span class="line">Heer, o sterkste aller sterken.</span>
@@ -502,7 +498,7 @@
   </details>
 
   <details class="song">
-    <summary><span class="num">15</span>Machtig God, sterke Rots<span class="sub">E&amp;R 155 · openingslied met tempo</span><span class="chev">▼</span></summary>
+    <summary><span class="num">14</span>Machtig God, sterke Rots<span class="sub">E&amp;R 155 · openingslied met tempo</span><span class="chev">▼</span></summary>
     <div class="lyrics">
       <span class="line">Machtig God, sterke Rots,</span>
       <span class="line">U alleen bent waardig.</span>
@@ -524,7 +520,7 @@
   <h2 class="sec" style="color:var(--muted);">🔎 Terugblik &amp; dankzegging (vrijdag)</h2>
 
   <details class="song">
-    <summary><span class="num">16</span>Dank U voor deze nieuwe morgen<span class="sub">E&amp;R 122</span><span class="chev">▼</span></summary>
+    <summary><span class="num">15</span>Dank U voor deze nieuwe morgen<span class="sub">E&amp;R 122</span><span class="chev">▼</span></summary>
     <div class="lyrics">
       <span class="line">Dank U voor deze nieuwe morgen,</span>
       <span class="line">dank U voor elke nieuwe dag,</span>
@@ -556,7 +552,7 @@
   <h2 class="sec" style="color:var(--muted);">🕯 Contemplatie &amp; stilte</h2>
 
   <details class="song">
-    <summary><span class="num">17</span>U bent mijn schuilplaats, Heer<span class="sub">E&amp;R 169 · draagt a capella goed</span><span class="chev">▼</span></summary>
+    <summary><span class="num">16</span>U bent mijn schuilplaats, Heer<span class="sub">E&amp;R 169 · draagt a capella goed</span><span class="chev">▼</span></summary>
     <div class="lyrics">
       <span class="line">U bent mijn schuilplaats Heer,</span>
       <span class="line">U vult mijn hart steeds weer</span>
@@ -590,22 +586,22 @@
   <h2 class="sec" style="color:var(--muted);">👂 Thema “luisteren”</h2>
 
   <details class="song">
-    <summary><span class="num">18</span>Uw Woord is een lamp voor mijn voet<span class="sub">E&amp;R 63 · kort · bij “Luisteren naar God”</span><span class="chev">▼</span></summary>
+    <summary><span class="num">17</span>Uw Woord is een lamp voor mijn voet<span class="sub">E&amp;R 63 · kort · bij “Luisteren naar God”</span><span class="chev">▼</span></summary>
     <div class="lyrics">
-      <span class="line refrain">Uw Woord is een lamp voor mijn voet</span>
-      <span class="line refrain">en een licht op mijn pad.</span>
-      <span class="line refrain">Uw Woord is een lamp voor mijn voet</span>
-      <span class="line refrain">en een licht op mijn pad.</span>
-      <span class="line refrain">Uw Woord is een lamp, Uw Woord is een licht,</span>
-      <span class="line refrain">Uw Woord is een lamp voor mijn voet</span>
-      <span class="line refrain">en een licht op mijn pad.</span>
+      <span class="line">Uw Woord is een lamp voor mijn voet</span>
+      <span class="line">en een licht op mijn pad.</span>
+      <span class="line">Uw Woord is een lamp voor mijn voet</span>
+      <span class="line">en een licht op mijn pad.</span>
+      <span class="line">Uw Woord is een lamp, Uw Woord is een licht,</span>
+      <span class="line">Uw Woord is een lamp voor mijn voet</span>
+      <span class="line">en een licht op mijn pad.</span>
     </div>
   </details>
 
   <h2 class="sec" style="color:var(--muted);">🙏 Gebed &amp; bede (popcorn-gebed vrijdag)</h2>
 
   <details class="song">
-    <summary><span class="num">19</span>Geef vrede, Heer, geef vrede<span class="sub">E&amp;R 129 · korte, herhaalbare bede</span><span class="chev">▼</span></summary>
+    <summary><span class="num">18</span>Geef vrede, Heer, geef vrede<span class="sub">E&amp;R 129 · korte, herhaalbare bede</span><span class="chev">▼</span></summary>
     <div class="lyrics">
       <span class="line">Geef vrede, Heer, geef vrede,</span>
       <span class="line">de wereld wil slechts strijd.</span>
@@ -646,7 +642,7 @@
   </details>
 
   <details class="song">
-    <summary><span class="num">20</span>Vader, ik aanbid U<span class="sub">E&amp;R 171 · canon</span><span class="chev">▼</span></summary>
+    <summary><span class="num">19</span>Vader, ik aanbid U<span class="sub">E&amp;R 171 · canon</span><span class="chev">▼</span></summary>
     <div class="lyrics">
       <span class="line">Vader, ik aanbid U</span>
       <span class="line">‘k Leg mijn leven voor U</span>
@@ -666,7 +662,7 @@
   <h2 class="sec" style="color:var(--muted);">⚓ Vertrouwen &amp; toekomst (zaterdag, Watchword)</h2>
 
   <details class="song">
-    <summary><span class="num">21</span>God is getrouw, zijn plannen falen niet<span class="sub">E&amp;R 131 · canon / tegenstem</span><span class="chev">▼</span></summary>
+    <summary><span class="num">20</span>God is getrouw, zijn plannen falen niet<span class="sub">E&amp;R 131 · canon / tegenstem</span><span class="chev">▼</span></summary>
     <div class="lyrics">
       <span class="line">God is getrouw, zijn plannen falen niet</span>
       <span class="line">Hij kiest de zijnen uit, Hij roept die allen.</span>
@@ -694,7 +690,7 @@
   </details>
 
   <details class="song">
-    <summary><span class="num">22</span>Wat de toekomst brengen moge<span class="sub">E&amp;R 174 · a capella</span><span class="chev">▼</span></summary>
+    <summary><span class="num">21</span>Wat de toekomst brengen moge<span class="sub">E&amp;R 174 · a capella</span><span class="chev">▼</span></summary>
     <div class="lyrics">
       <span class="line">Wat de toekomst brengen moge,</span>
       <span class="line">mij geleidt des Heren hand,</span>
@@ -725,7 +721,7 @@
   <h2 class="sec" style="color:var(--muted);">🎉 Vieren &amp; afsluiting (zaterdag)</h2>
 
   <details class="song">
-    <summary><span class="num">23</span>U maakt ons één, U bracht ons tezamen<span class="sub">E&amp;R 170 · community-lied</span><span class="chev">▼</span></summary>
+    <summary><span class="num">22</span>U maakt ons één, U bracht ons tezamen<span class="sub">E&amp;R 170 · community-lied</span><span class="chev">▼</span></summary>
     <div class="lyrics">
       <span class="line">U maakt ons één.</span>
       <span class="line">U bracht ons tezamen,</span>
@@ -743,7 +739,7 @@
   </details>
 
   <details class="song">
-    <summary><span class="num">24</span>Samen in de naam van Jezus<span class="sub">E&amp;R 168</span><span class="chev">▼</span></summary>
+    <summary><span class="num">23</span>Samen in de naam van Jezus<span class="sub">E&amp;R 168</span><span class="chev">▼</span></summary>
     <div class="lyrics">
       <span class="line">Samen in de naam van Jezus</span>
       <span class="line">heffen wij een loflied aan,</span>
@@ -775,7 +771,7 @@
   </details>
 
   <details class="song">
-    <summary><span class="num">25</span>De Heer zegene u<span class="sub">Slotlied / zegengebed</span><span class="chev">▼</span></summary>
+    <summary><span class="num">24</span>De Heer zegene u<span class="sub">Slotlied / zegengebed</span><span class="chev">▼</span></summary>
     <div class="lyrics">
       <span class="line">De HEER zegene u.</span>
       <span class="line">De HEER zegene u.</span>
@@ -800,6 +796,6 @@
     });
   }
 </script>
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" nonce="fswxOwnsthg0TWPSZpl3Mw==" data-cf-beacon='{"version":"2024.11.0","token":"36b4216ae2dc4d5488c249161e71fe1e","spa":2}' crossorigin="anonymous"></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" nonce="yfXKR/YQG6Jfh5xRNELoxQ==" data-cf-beacon='{"version":"2024.11.0","token":"36b4216ae2dc4d5488c249161e71fe1e","spa":2}' crossorigin="anonymous"></script>
 </body>
 </html>
