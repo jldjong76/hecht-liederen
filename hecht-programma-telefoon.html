@@ -65,6 +65,14 @@
     color:var(--muted); margin:14px 0 3px;}
   p.txt{font-size:14.5px; line-height:1.55; color:#334155;}
   p.txt b{color:var(--ink);}
+  /* Jeroens aantekeningen */
+  .note{
+    margin-top:12px; background:#fffbeb; border:1px dashed var(--gold);
+    border-radius:10px; padding:10px 12px;
+  }
+  .note .lbl{margin:0 0 3px; color:var(--gold);}
+  .note p{font-size:14px; color:#92400e; line-height:1.55; white-space:pre-wrap;}
+  .card.pauze .note{background:#fff;}
   /* nav bar */
   .nav{
     position:fixed; left:0; right:0; bottom:0; height:66px;
@@ -81,7 +89,6 @@
   .progress{display:flex; gap:4px; justify-content:center; margin-top:4px; flex-wrap:wrap;}
   .dot{width:6px; height:6px; border-radius:50%; background:#cbd5e1;}
   .dot.on{background:var(--teal);}
-  .hint{text-align:center; font-size:11.5px; color:var(--muted); padding:8px 0 0;}
 </style>
 </head>
 <body>
@@ -107,111 +114,109 @@ const DATA = {
 d1: [
  {t:"09:00–09:10", o:"Welkom & dagopening", type:"norm", tag:"Opening", l:"Jeroen (dagvoorzitter)",
   i:"Doel dag 1 benoemen: <b>LUISTEREN</b>, teruggaan in de tijd — géén besluiten. Afspraak: leiders en deelnemers nemen gelijkwaardig deel; het leiderschapsteam faciliteert \"op handen\". Ook: <b>toestemming vragen</b> aan de deelnemers voor het opnemen/documenteren van de inhoudelijke oogstmomenten van het weekend (harvest, wrap-ups, geeltjes-slotfase).",
-  b:"Programma op flip, tijdbord"},
+  b:"Programma op flip, tijdbord", a:"..."},
  {t:"09:10–09:40", o:"Geestelijke opening: zingen, bijbeltekst & stilte + introductie viervoudig luisteren", type:"geest", tag:"Geestelijk", l:"Arnout",
   i:"Taizé-achtig, eenvoudig en meerstemmig (alleen christelijke deelnemers — geen terughoudendheid). Bijbeltekst: <b>Johannes 17:20–23</b>. Daarna een moment stilte. <b>Arnout introduceert het viervoudig luisteren</b> als kapstok voor het hele weekend: luisteren naar God, naar elkaar, naar de context en naar de bredere kerk.",
-  b:"Liedbladen, kaars, bijbel"},
+  b:"Liedbladen, kaars, bijbel", a:"Goed om Wait for the Lord hier aan te leren, maar ook Bless the Lord: Voluit vs. luisterend zingen voordoen (!), ik denk ook 13 (Grote God, wij loven u), "},
  {t:"09:40–10:10", o:"Interview: 10 jaar HECHT", type:"norm", tag:"Terugblik", l:"Jeroen interviewt (vooral) Arnout, Ineke Joosse & Marjolijn",
   i:"20 minuten: Jeroen begint met vragen aan Jasper Klapwijk, Jaap Joosse en Ineke K., zij stonden aan de wieg van de opdracht \"diepzee te gaan vissen\" (met visie die daarachter zat). Hen kort vragen dat toe te lichten, maar ze kunnen gewoon in de zaal blijven zitten. Dan naar Arnout/Ineke/Marjolijn: het is niet zonder slag of stoot gegaan — er was strijd om hiertoe te komen; daar woorden aan geven is mooi, mét dankbaarheid. 3 kerken, 3 mensen, een bestaande community die er al was, couleur locale. 10 minuten vragen uit de zaal — Jeroen activeert de zaal echt.",
-  b:"Stoelen in gespreksopstelling, evt. microfoon"},
+  b:"Stoelen in gespreksopstelling, evt. microfoon", a:"Welke Ineke's? - kort. Daarna richting Arnout: Wat is jouw droom toen je hiermee begon? Marjolijn: Waar heb jij strijd gevoeld? Ineke: Waar ben je dankbaar voor? (en verder go with the flow)"},
  {t:"10:10–10:15", o:"Geen missie maar Watchword", type:"norm", tag:"Kader", l:"Arnout",
   i:"Kader (±5 min): dit weekend geen missiestatement maar samen letten op wat God geeft — spreek uit als \"Watchword\".",
-  b:"Presentatie"},
- {t:"10:15–10:25", o:"Koffie", type:"pauze", tag:"Pauze", l:"—", i:"Korte pauze van 10 minuten.", b:"—"},
+  b:"Presentatie", a:"..."},
+ {t:"10:15–10:25", o:"Koffie", type:"pauze", tag:"Pauze", l:"—", i:"Korte pauze van 10 minuten.", b:"—", a:"..."},
  {t:"10:25–10:40", o:"Energizer: Traffic Jam", type:"ener", tag:"Energizer", l:"Jeroen (dagvoorzitter)",
-  i:"Fysiek en luchtig; activeert iedereen vóór de terugblik.", b:"Lijmtape of touw op de vloer"},
+  i:"Fysiek en luchtig; activeert iedereen vóór de terugblik.", b:"Lijmtape of touw op de vloer", a:"Kan ook met 5, 6"},
  {t:"10:40–11:30", o:"Terugblik: \"Wat zag je God doen de afgelopen 10 jaar?\"", type:"norm", tag:"Terugblik", l:"1-2-4-All; leiderschapspersoon bewaakt het proces",
   i:"Huiswerkvraag (van tevoren nagedacht): wat zag je God de afgelopen 10 jaar in HECHT doen — wat is voor jou de rode draad? Eerst individueel, dan in tweeën, dan plenair. Iemand anders dan het leiderschapsteam vat het samen.",
-  b:"Werkblad/programmaboekje, flipover, post-its"},
+  b:"Werkblad/programmaboekje, flipover, post-its", a:"Ik moet de timing benoemen, en ook het max aantal punten om steeds door te geven. En aan het eind (ook volgende puntje) even meeschrijven / mee laten schrijven"},
  {t:"11:30–11:40", o:"Overdracht naar de middag", type:"norm", tag:"Overdracht", l:"Jeroen",
   i:"Plenair benoemen wat is opgehaald — dit gaat zo meteen terug naar God in het gebedsmoment vóór de lunch.",
-  b:"Wandplaten"},
+  b:"Wandplaten", a:"..."},
  {t:"11:40–11:50", o:"Gebedsmoment: teruggeven aan God", type:"geest", tag:"Geestelijk", l:"Grote kring; Jeroen sluit af",
   i:"Vóór de lunch. Iedereen stil, praat met God. Afspraak: stil worden — wat wil je bij God brengen? Bid voor <b>één ding</b>, benoem het kort (mag ook een beeld zijn). Pop-corn stijl. Jeroen sluit na max 10 minuten af.",
-  b:"Kaars"},
- {t:"11:50–12:35", o:"Lunch", type:"pauze", tag:"Pauze", l:"—", i:"45 minuten.", b:"—"},
+  b:"Kaars", a:"Leg uit 10 minuten; Jeroen sluit af, dan zingen we Dank U (nr 15)"},
+ {t:"11:50–12:35", o:"Lunch", type:"pauze", tag:"Pauze", l:"—", i:"45 minuten.", b:"—", a:"..."},
  {t:"12:35–12:45", o:"Stiltemoment: terugkomen", type:"geest", tag:"Geestelijk", l:"—",
-  i:"Luisterlied of stilte; rustmoment bij binnenkomst van de middag.", b:"Muziek, kaars"},
+  i:"Luisterlied of stilte; rustmoment bij binnenkomst van de middag.", b:"Muziek, kaars", a:"Bluetooth speaker speelt Wait for the Lord (1). Hier kunnen we ook mooi Ubi Caritas (4) zingen"},
  {t:"12:45–13:15", o:"Onderzoek, wijk en maatschappelijke context", type:"norm", tag:"Context", l:"Martin, Marjolijn, Marco",
   i:"Drie presentaties van ca. 10 minuten: 1) Sociaal-demografisch — Martin (CBS, kwantitatief, cijfers mogen; het studentenonderzoek komt in beginsel via Martin aan bod — géén aparte presentatie door studenten); 2) Sociaal-geografisch — Marjolijn (kwalitatief); 3) Transitie — Marco. De dagvoorzitter bewaakt de tijd. <b>Noteren tijdens/na elke bijdrage:</b> deelnemers schrijven op wat hen raakt (werkblad) — dus níet pas aan het einde van het blok.",
-  b:"Beamer, microfoon, tijdklok"},
+  b:"Beamer, microfoon, tijdklok", a:"..."},
  {t:"13:15–13:25", o:"Korte onderbreking", type:"pauze", tag:"Pauze", l:"—",
-  i:"Korte pauze van 10 minuten — zowel voor de concentratie als om de wissel van luistersoort te markeren: van luisteren naar de <b>context</b> naar luisteren naar de <b>brede kerk</b>.", b:"—"},
+  i:"Korte pauze van 10 minuten — zowel voor de concentratie als om de wissel van luistersoort te markeren: van luisteren naar de <b>context</b> naar luisteren naar de <b>brede kerk</b>.", b:"—", a:"..."},
  {t:"13:25–14:15", o:"Inspiratie uit de bredere kerk", type:"norm", tag:"Brede kerk", l:"Arnout, Marco, Annelies",
   i:"Zes persoonlijke verhalen uit de expertinterviews, ca. 7–8 minuten per verhaal, gekaderd als Zaadje–Voedingsbodem–Planten–Bloei (hoe begon het, waar landde het, hoe verliep het opstarten, hoe kwam het tot bloei — én wat inspireerde de verteller), met foto van de plek (PowerPoint): Hemelsbreed (Arnout), Rafiq (Marco), Pastor Moses (Arnout), Noorderlicht (Annelies), Renew/René Visser (Marco), René van Loon (Arnout). <b>Ook hier:</b> na elk verhaal kort noteren wat je raakt (werkblad).",
-  b:"Beamer, microfoon, tijdklok, PowerPoint met foto's"},
+  b:"Beamer, microfoon, tijdklok, PowerPoint met foto's", a:"..."},
  {t:"14:15–14:25", o:"\"Wat heeft jou geraakt?\" — aantekeningen afronden", type:"norm", tag:"Verwerking", l:"—",
   i:"Kort moment: eigen aantekeningen van de middag teruglezen en afronden — het meeste is al per bijdrage genoteerd, dus dit is alleen het afronden en scherpen, vóórdat de werkvorm ingaat.",
-  b:"Werkblad, pennen"},
+  b:"Werkblad, pennen", a:"..."},
  {t:"14:25–15:10", o:"Discussie: wat raakt je? Wat resoneert? Wat schuurt? (1-2-4)", type:"norm", tag:"Discussie", l:"Leiderschapsteam bewaakt de groepjes",
   i:"Vragen: wat raakt je uit de spiegel, wat resoneert, wat schuurt, wat wéét je, wat vraag je je af? De werkvorm 1-2-4-All: eerst individueel, dan in tweetallen, dan met je groepje van 4 — de plenaire \"All\" volgt na de koffie en de Helium Stick. Iemand anders vat samen. Als iemand een \"woord van God\" ervaart: eerbiedig en open mee omgaan.",
-  b:"Gespreksvragen op kaartjes"},
- {t:"15:10–15:20", o:"Koffie", type:"pauze", tag:"Pauze", l:"—", i:"Korte pauze van 10 minuten.", b:"—"},
+  b:"Gespreksvragen op kaartjes", a:"..."},
+ {t:"15:10–15:20", o:"Koffie", type:"pauze", tag:"Pauze", l:"—", i:"Korte pauze van 10 minuten.", b:"—", a:"..."},
  {t:"15:20–15:30", o:"Energizer: Helium Stick", type:"ener", tag:"Energizer", l:"Jeroen (dagvoorzitter) + 3 begeleiders",
   i:"In groepen van 6–8 rond een stok; korte fysieke break vóór de plenaire uitwisseling. <b>Todo:</b> 3 mensen regelen die Jeroen hierbij helpen begeleiden.",
-  b:"2–3 lichte stokken"},
+  b:"2–3 lichte stokken", a:"..."},
  {t:"15:30–16:00", o:"Plenaire uitwisseling — de \"All\" & harvest", type:"norm", tag:"Plenair", l:"Jeroen (facilitatie); harvest door iemand anders dan het leiderschapsteam",
   i:"De plenaire \"All\" van het 1-2-4-All dat vóór de pauze begon: ophalen vanuit de ±5 groepjes van 4. Centrale vraag: hoe luisteren we ernaar — en naar élkaar?",
-  b:"Wand/flip met post-its"},
+  b:"Wand/flip met post-its", a:"..."},
  {t:"16:00–16:30", o:"Wrap-up van de dag", type:"norm", tag:"Wrap-up", l:"Plenair, de groep staat in een cirkel, Jeroen faciliteert, maar idealiter wordt de \"bal\" rondgespeeld",
-  i:"Wat nemen we mee naar zaterdag?", b:"Wandplaten, post-its"},
+  i:"Wat nemen we mee naar zaterdag?", b:"Wandplaten, post-its", a:"..."},
  {t:"16:30–16:50", o:"Geestelijke afsluiting: zingen & stilte", type:"geest", tag:"Geestelijk", l:"Jeroen",
   i:"Opnieuw Taizé-achtig zingen, stilte; de dag biddend overgeven. Zingen a capella of Jeroen speelt mee — per lied verschillend, hoeft niet in het programma te worden vastgelegd.",
-  b:"Liedbladen, kaars"},
+  b:"Liedbladen, kaars", a:"Beginnen met 19 (Vader ik aanbid u), dan 16 (schuilplaats), dan vooral ook rondvragen!"},
  {t:"16:50–17:00", o:"Sluiting dag 1", type:"norm", tag:"Sluiting", l:"Jeroen (dagvoorzitter)",
-  i:"Praktische zaken. Vrijdagavond: wél samen eten — geen avondprogramma per se. Korte blik op zaterdag.", b:"—"}
+  i:"Praktische zaken. Vrijdagavond: wél samen eten — geen avondprogramma per se. Korte blik op zaterdag.", b:"—", a:"..."}
 ],
 d2: [
  {t:"09:00–09:10", o:"Terugblik op vrijdag", type:"norm", tag:"Opening", l:"Jeroen (dagvoorzitter)",
-  i:"Korte terugblik (10 min) om de groep te verbinden met gisteren. Opbrengst: één of enkele vragen aan de zaal, bv. \"wat heeft je vannacht nog beziggehouden?\" — korte reacties, geen discussie.", b:"—"},
+  i:"Korte terugblik (10 min) om de groep te verbinden met gisteren. Opbrengst: één of enkele vragen aan de zaal, bv. \"wat heeft je vannacht nog beziggehouden?\" — korte reacties, geen discussie.", b:"—", a:"..."},
  {t:"09:10–09:40", o:"Geestelijke opening: zingen, bijbellezen & bidden + viervoudig luisteren terug", type:"geest", tag:"Geestelijk", l:"Arnout",
   i:"Taizé-achtig zingen, stilte om de dag op God te richten; daarna ruimte voor bijbellezen en bidden — bijbelgedeelte en wie er bidt nog open. <b>Arnout haalt het viervoudig luisteren kort terug</b> (geïntroduceerd op dag 1): vandaag luisteren we opnieuw naar God, elkaar, de context en de bredere kerk — en nu ook naar wat God voor de toekomst geeft.",
-  b:"Liedbladen, bijbels, kaars"},
+  b:"Liedbladen, bijbels, kaars", a:"Eerst 21 (Wat de toekomst brengen moge) dan 20 (God is getrouw, met tegenstem) dan Wait for the Lord (1), dan Wees stil (5) - en dan ook echt even 5 minuten stil. Dan in Christ alone (6)"},
  {t:"09:40–10:30", o:"Elevator pitches — kaartjes-werkvorm", type:"norm", tag:"Pitches", l:"Jeroen (facilitatie); deelnemers vertellen",
   i:"4–6 pitches van max. 5 minuten, wereldwijd. Jeroen heeft kaartjes gemaakt; mensen vertellen het verhaal na <b>alsof ze er zelf bij waren</b> — korte verhaaltjes. Kernvraag: \"Wat zijn voorbeelden van experimenten die wereldwijd gebeuren om mensen te verbinden?\" (evt. ook aan Jezus refereren). Evt. extra vraag: \"wat was hun roeping dat ze hiermee begonnen?\" — hoeft niet. <b>Pas op:</b> laat het niet alleen over community building gaan — misschien moeten we juist ÚIT de communities. Maak het laagdrempelig: het kunnen ook gewoon activiteiten zijn.",
-  b:"Kaartjes, microfoon, tijdklok (5 min)"},
- {t:"10:30–10:40", o:"Koffie", type:"pauze", tag:"Pauze", l:"—", i:"Korte pauze van 10 minuten.", b:"—"},
+  b:"Kaartjes, microfoon, tijdklok (5 min)", a:"Er staat 4-6 pitches, maar gewoon doorgaan tot het 10:30 is"},
+ {t:"10:30–10:40", o:"Koffie", type:"pauze", tag:"Pauze", l:"—", i:"Korte pauze van 10 minuten.", b:"—", a:"..."},
  {t:"10:40–10:55", o:"Energizer: Menselijke knoop", type:"ener", tag:"Energizer", l:"Jeroen (dagvoorzitter)",
-  i:"In groepen van 6–8; handen vastgrijpen en de knoop gezamenlijk ontwarren. Fysiek, samenwerkend, luchtig.", b:"Ruimte (geen materiaal)"},
+  i:"In groepen van 6–8; handen vastgrijpen en de knoop gezamenlijk ontwarren. Fysiek, samenwerkend, luchtig.", b:"Ruimte (geen materiaal)", a:"Verdeel de klas in groepjes van 6 tot 8 leerlingen; * Iedereen staat in een kring en sluit zijn of haar ogen. ;* Steek willekeurig twee handen uit om die van twee anderen vast te pakken. ;* Als iedereen handen vastheeft, mogen de ogen weer open. ;* Het doel: ontwar de menselijke knoop zonder handen los te laten. Regels: * Zorg dat je niet beide handen van dezelfde persoon pakt; * Alleen praten, bewegen en samenwerken is toegestaan – geen trekken of duwen.; * Als het echt vastzit, mag de docent één hint geven. ;* De groep is klaar zodra iedereen in een open kring staat (of meerdere lossen kringen, dat mag ook!)."},
  {t:"10:55–11:45", o:"Luisteren naar God", type:"geest", tag:"Geestelijk", l:"Kernteam-lid",
   i:"Eérst dit — dán pas de discussies. <b>Bijbelgedeelte uit het voorbereidingsmateriaal</b>, gelezen met stilte en gebed, begeleid door een kernteam-lid. Ruimte voor wat God ons geeft; ook een \"woord van God\" kan hier eerbiedig gedeeld en onderscheiden worden. Praktijk van het Watchword: biddend letten op woorden of bijbelse beloften die resoneren.",
-  b:"Bijbels, boekje van Arnout, kaars"},
+  b:"Bijbels, boekje van Arnout, kaars", a:"Van tevoren checken of er een kernteam-lid is die dit kan leiden!"},
  {t:"11:45–11:50", o:"Inleiding Wereldcafé: drie vragen (5 min)", type:"norm", tag:"Inleiding", l:"Jeroen",
   i:"Drie vragen: <b>Waarom</b> — waar roept God ons in deze wijk, waar zit de urgentie? <b>Wat</b> — wat kunnen wij bieden? Denk outside-the-box: de korte pitches van vanochtend zijn ter inspiratie (niet om te kopiëren). <b>Wat maakt dit HECHT?</b> De gesprekken beginnen bij \"waar is je roeping?\"",
-  b:"Flipover per tafel, post-its, stiften"},
- {t:"11:50–12:35", o:"Lunch", type:"pauze", tag:"Pauze", l:"—", i:"45 minuten.", b:"—"},
+  b:"Flipover per tafel, post-its, stiften", a:"..."},
+ {t:"11:50–12:35", o:"Lunch", type:"pauze", tag:"Pauze", l:"—", i:"45 minuten.", b:"—", a:"..."},
  {t:"12:35–12:45", o:"Stiltemoment: terugkomen", type:"geest", tag:"Geestelijk", l:"—",
-  i:"Luisterlied of stilte; rustmoment bij binnenkomst van de middag.", b:"Muziek, kaars"},
+  i:"Luisterlied of stilte; rustmoment bij binnenkomst van de middag.", b:"Muziek, kaars", a:"Met bluetooth speaker: Wait for the Lord. Zingen: Psalm 139, niet alle versen"},
  {t:"12:45–14:15", o:"Wereldcafé: doorlopen langs de drie vragen", type:"norm", tag:"Wereldcafé", l:"Groepjes; leiderschapsteam faciliteert \"op handen\"",
   i:"Per ronde staat één vraag centraal (Waarom → Wat → Wat maakt dit HECHT?). <b>Vier tafels, met vier leden van het leiderschapsteam als vaste tafelbegeleiders</b>; de deelnemers bewegen tussen de tafels. <b>Elke tafel werkt aan dezelfde drie vragen</b> — er zijn dus géén aparte tafelthema's. De tafelbegeleiders <b>bewaken het proces, zonder de inhoud te sturen</b>. Deelnemers die bij een tafel aanschuiven <b>bouwen voort op wat daar al is opgeschreven</b>. Zo bouwt elk gesprek voort op wat anderen al neerzetten — doorlopen levert verbinding én diepgang op.",
-  b:"Flipoverpapier per tafel, post-its, stiften"},
- {t:"14:15–14:25", o:"Koffie", type:"pauze", tag:"Pauze", l:"—", i:"Korte pauze van 10 minuten.", b:"—"},
+  b:"Flipoverpapier per tafel, post-its, stiften", a:"..."},
+ {t:"14:15–14:25", o:"Koffie", type:"pauze", tag:"Pauze", l:"—", i:"Korte pauze van 10 minuten.", b:"—", a:"..."},
  {t:"14:25–14:45", o:"Terugkoppeling Wereldcafé", type:"norm", tag:"Terugkoppeling", l:"Leiderschapsteam",
   i:"15–20 minuten plenair over wat er in het Wereldcafé bij de verschillende tafels is opgebouwd. <b>De vier tafelbegeleiders presenteren zelf de opbrengst van hun tafel</b> — zij stonden als enige vast bij een tafel en overzien alle rondes.",
-  b:"Flipovers van de tafels"},
+  b:"Flipovers van de tafels", a:"..."},
  {t:"14:45–14:55", o:"Energizer: Count to 20", type:"ener", tag:"Energizer", l:"Jeroen (dagvoorzitter)",
-  i:"Plenair: samen tot 20 tellen — wie twee tegelijk spreekt, begint opnieuw. Luchtig en scherp voor de slotfase.", b:"—"},
+  i:"Plenair: samen tot 20 tellen — wie twee tegelijk spreekt, begint opnieuw. Count Up is a collaborative energizer activity designed to generate calm, focused energy and improve group awareness by having participants count to a target number, typically 20, in a random order without prior planning.  The core rule is that only one person may say a number at a time; if two people speak simultaneously, even for a split second, the group must restart from 1. Success requires participants to rely on non-verbal cues, such as eye contact and body language, to sense when it is appropriate to speak, making it an effective exercise for teamwork, communication, and focus. The activity is versatile, suitable for various age groups and settings (including online meetings), and typically lasts between 5 to 10 minutes depending on the group's proficiency.", b:"—", a:"..."},
  {t:"14:55–15:15", o:"In tweetallen", type:"norm", tag:"Verwerking", l:"—",
-  i:"Wat heb je ontvangen, wat neem je mee naar de slotfase?", b:"—"},
+  i:"Wat heb je ontvangen, wat neem je mee naar de slotfase?", b:"—", a:"..."},
  {t:"15:15–16:00", o:"Plenair: Watchword", type:"norm", tag:"Watchword", l:"Jeroen (facilitatie) + harvest/notulist",
   i:"Iedereen schrijft op een geeltje het woord, de zin, gedachte of Bijbeltekst die uit dit weekend is blijven hangen, en hangt dit op één gezamenlijke plek op (flipover/wand). Daarna vertelt iedereen kort zijn geeltje — alleen vragen ter verduidelijking — en sluit Jeroen af met een korte reactieronde. We letten samen op of er een woord van hoop blijft resoneren. Ontstaat er iets gedeelds, mooi; zo niet, dan rijpt de opbrengst later verder bij kernteam en leiderschapsteam. Geen actiestand of analytische besluitvorming.",
-  b:"Geeltjes, één flipover/wand, stiften"},
+  b:"Geeltjes, één flipover/wand, stiften", a:"..."},
  {t:"16:00–16:25", o:"Vieren & geestelijke afsluiting", type:"geest", tag:"Vieren", l:"Vieren: Jeroen (het zingen); geestelijke afsluiting: Annelies (nog te regelen)",
   i:"VIEREN: dank voor 10 jaar HECHT. Jeroen leidt het vieren (het Taizé-achtige zingen); Annelies doet de geestelijke afsluiting: stilte en dankgebed, eventueel een klein feestelijk moment.",
-  b:"Liedbladen, kaars, evt. iets kleins om te vieren"},
+  b:"Liedbladen, kaars, evt. iets kleins om te vieren", a:"Vragen om liederen. Psalm 100(7), Lof zij de Heer (9), en de laatste liederen 22, 23, 24 allemaal goed"},
  {t:"16:25–16:35", o:"Afsluiting weekend", type:"norm", tag:"Sluiting", l:"Jeroen; daarna iemand van het leiderschapsteam",
   i:"Jeroen begint met een korte evaluatie: hoe hebben we het ervaren om hier zo bij elkaar te zijn? Daarna vertelt iemand van het leiderschapsteam hoe ze de opbrengst (watchword) verder oppakken richting de strategie van de komende 10 jaar. Gezamenlijk slot.",
-  b:"—"}
+  b:"—", a:"..."}
 ]};
 
 let day = "d1", idx = 0;
 const deck = document.getElementById("deck");
 
-function esc(s){return s;}
-
 function build(){
   deck.innerHTML = "";
-  DATA[day].forEach((it, i) => {
+  DATA[day].forEach((it) => {
     const sl = document.createElement("div");
     sl.className = "slide hidden";
     sl.innerHTML = `
@@ -225,6 +230,10 @@ function build(){
         <p class="txt">${it.i}</p>
         <div class="lbl">Benodigdheden</div>
         <p class="txt">${it.b}</p>
+        <div class="note">
+          <span class="lbl">Jeroens aantekeningen:</span>
+          <p>${it.a}</p>
+        </div>
       </div>`;
     deck.appendChild(sl);
   });
@@ -297,6 +306,5 @@ document.addEventListener("keydown", e=>{
 
 build();
 </script>
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" nonce="jpaSQfYCV7KjbqnUIzTCTg==" data-cf-beacon='{"version":"2024.11.0","token":"36b4216ae2dc4d5488c249161e71fe1e","spa":2}' crossorigin="anonymous"></script>
 </body>
 </html>
